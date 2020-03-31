@@ -1,0 +1,74 @@
+# Tests performed on cs551 hw5 (tcp)
+
+For each test executing manage, we choose a random port between 10000-32000
+After each test, all manage, compute, report are terminated with SIGTERM.
+Each test has a fresh version of manage.
+
+a)
+Runs manage in the background (&)
+Waits 1 sec
+Kills manage with SIGINT
+Waits 2 secs
+Checks if listening port exists with "lsof -u $USER -i -P -n"
+
+b)
+Using egrep, checks for "poll", "select", "fork", "threads"
+
+c)
+Runs manage in the background (&)
+Waits 1 sec
+Runs compute in the background (&)
+Waits 1 sec
+Runs report
+Report must show perfect numbers, tests, one compute connected.
+
+d)
+Runs manage in the background (&)
+Waits 1 sec
+Runs compute in the background (&)
+Waits 1 sec
+loops 5 times
+   Waits 2 sec
+   Runs report
+The sequence of reports must show increasing values of "tested".
+
+e)
+Runs manage in the background (&)
+Waits 1 sec
+Runs compute in the background (&)
+Waits 1 sec
+Runs report -k
+Checks if any instance of manage or compute exists with "ps"
+
+f)
+Runs manage in the background (&)
+loops 10 times
+   Waits 1 sec
+   Runs compute in the background (&)
+   Waits 1 sec
+   Kills the compute with SIGHUP, SIGINT, SIGQUIT alternating
+Waits 1 sec
+Runs report 
+We must obtain the report, manage must be kept rnning, no compute should exist in report or using "ps".
+
+g)
+Inspects code to determine if the 15 seconds range goal is implemented.
+
+h)
+Runs manage in the background (&)
+Waits 1 sec
+loops 10 times
+   Runs compute in the background (&)
+Waits 1 sec
+Runs report 
+We must see the report of 10 computes connect, manage and 10 computes must be running.
+
+i)
+Runs manage in the background (&)
+Waits 1 sec
+loops with I in range 1..10 (10 times)
+   Runs compute in the background (&)
+   WAIT = (2^I)/1000 (from 2 to 1000 milliseconds) (^ means power)
+   Waits WAIT
+   Runs report 
+We must be able to see the 10 reports requested with varying time between a new compute started and the report.

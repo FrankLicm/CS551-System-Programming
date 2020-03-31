@@ -1,0 +1,17 @@
+
+Student Li,Changmao, NetID cli323 graded on Fri Dec 13 17:05:22 EST 2019
+------------------------------------------
+Compilation of manage.c completed correctly. Warnings provided in 'compErr.log' for your information.
+Compilation of compute.c completed correctly. Warnings provided in 'compErr.log' for your information.
+Compilation of report.c completed correctly. Warnings provided in 'compErr.log' for your information.
+a: Is any IPC used for manage to compute communication? Yes
+b: Is a shared memory segment being created after starting manage? Yes
+c: Are processes monitoring signals (INTR, QUIT, HANGUP)? Yes
+d: Report shows statistics properly for 3 computes
+e: Is ‘report -k’ ending all processes and releasing the shared memory and message queue? Yes
+f: Are computes starting properly, registering with manage when starting at 1 sec interval? Also, is manage handling more than 20 computes properly (denying registration)? Yes
+(-3 Points) Partial g: Are computes ending their work well when interrupted by HUP, INT, QUIT? Partially: you should not execl(report -k) on every signal.
+h: Can your computes work properly if they start at very apart N? (0 skips) Yes
+i: Can your computes work properly if they start at very close N? (many skips) Yes
+------------------------------------------
+Final grade = 97

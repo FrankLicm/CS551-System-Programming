@@ -1,0 +1,20 @@
+
+Student Li,Changmao, NetID cli323 graded on Tue Dec 17 17:25:32 EST 2019
+------------------------------------------
+Compilation of manage.c completed correctly. Warnings provided in 'compErr.log' for your information.
+Compilation of compute.c completed correctly. Warnings provided in 'compErr.log' for your information.
+Compilation of report.c completed correctly. Warnings provided in 'compErr.log' for your information.
+a: Is a listening socket created by manage in a specified port? Yes
+b: Can manage accept new connections and listen communication from already opened sockets (poll, select,...)? Yes
+c: Can a compute connect to manage, receive the initial range and find the initial perfect numbers (checked with report)? Yes
+(-3 Points) Partial: d: When a report is requested, is manage requesting status updates to the computes? No
+    Comment: The count of "Tested" numbers repeats between reports, thus not manage is not requesting updates on each report.
+e: Can report -k finish this simple computation? Yes
+f: Are computes ending their work well when interrupted by HUP, INT, QUIT, leaving manage working properly? Yes
+g: Is your manage scaling the size of ranges to meet the goal of 15 seconds per range? Yes
+(-3 Points) Partial: h: Is your manage able to handle multiple computes starting (approximately) simultaneously? No
+    Comment: Computes started but the report after 10 computes did not return (partial).
+i: Check if compute can do all the parallel work requested: listen manage, wait signals, compute perfect numbers, send information to manage? Yes
+    Comment: Your manage seems to support only 10 clients, but it should be able to ahndle 10 computes and 1 report: 11 clients. No penalty here.
+------------------------------------------
+Final grade = 94

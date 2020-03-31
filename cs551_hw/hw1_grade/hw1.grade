@@ -1,0 +1,9 @@
+------------------------------------------
+Compilation completed correctly. Warnings provided in 'compErr.log' for your information.
+Results are correct for N=15000
+Results are correct for N=30000
+Results are correct for N=50000
+EOF is properly detected
+Your whichseg is optimized
+------------------------------------------
+Final grade = 100

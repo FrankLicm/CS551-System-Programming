@@ -1,0 +1,14 @@
+Compiling manage.c .....
+
+manage.c: In function ‘main’:
+manage.c:76:25: warning: variable ‘clients’ set but not used [-Wunused-but-set-variable]
+                     int clients[10];
+                         ^~~~~~~
+Compiling compute.c .....
+
+compute.c: In function ‘main’:
+compute.c:105:31: warning: variable ‘tid’ set but not used [-Wunused-but-set-variable]
+                     pthread_t tid[thread_num];
+                               ^~~
+Compiling report.c .....
+

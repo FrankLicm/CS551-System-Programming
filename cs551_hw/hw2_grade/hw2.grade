@@ -1,0 +1,18 @@
+
+Student cli323, NetID cli323 graded on Wed Oct 30 08:41:26 EDT 2019
+------------------------------------------
+Compilation completed correctly. Warnings provided in 'compErr.log' for your information.
+q1: Creates valid myar archive, compatible with ar
+q2: Creates valid myar archive with odd file sizes, compatible with ar
+t1: Properly listing archive created by ar
+t2: Properly listing archive created by your myar
+tv1: Properly listing archive created by ar, with tv
+tv2: Properly listing archive created by your myar, with tv
+d1: Properly deleting a unique file in archive, verified with ar tv
+d3: Properly removing multiple files without reopening archive (use of unlink)
+x: Properly extracting files with correct permissions and user/group
+xo: Properly extracting files with correct permissions, user/group, mtime
+IO: Properly using read/write/lseek for all diskio (unbuffered I/O)
+functions: Properly implemented and used the functions ‘fill_ar_hdr’ and ‘fill_meta’
+------------------------------------------
+Final grade = 100
